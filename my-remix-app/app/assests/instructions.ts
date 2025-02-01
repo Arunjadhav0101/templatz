@@ -6,7 +6,7 @@ Please generate a formal letter in JSON format based on the provided details. En
 {
   "sender": {
     "name": "[sender-name]",
-    "address": "[sender-address], [sender-city], [sender-state], [sender-zip]",
+    "address": "[sender-address], $ [sender-city], $ [sender-state], [sender-zip]",
     "phone": "[sender-phone]",
     "email": "[sender-email]"
   },
@@ -15,7 +15,7 @@ Please generate a formal letter in JSON format based on the provided details. En
     "name": "[recipient-name]",
     "title": "[recipient-title]",
     "company": "[company-name]",
-    "address": "[company-address], [company-city], [company-state], [company-zip]"
+    "address": "[company-address], $ [company-city], $ [company-state], [company-zip]"
   },
   "subject": "[subject]",
   "greeting": "[Respected/Dear] [Title] [Name]",
@@ -30,7 +30,7 @@ Please generate a formal letter in JSON format based on the provided details. En
 
 ### Letter Structure:
 1. **Sender’s Details**:  
-   - Includes sender's name, address, phone number, and email, placed at the end of the letter.
+   - Includes sender's name, address (here $ will act as seperator in the  ), phone number, and email, placed at the end of the letter.
 
 2. **Recipient’s Details**:  
    - Includes recipient’s name, title, company name, and address.
