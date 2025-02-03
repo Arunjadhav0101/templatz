@@ -116,9 +116,9 @@ const formFields = [
 
 export default function Index() {
   return (
-    <div>
+    <div className="  border border-white p-5  rounded-lg">
       <nav>
-        <h1 className="text-center">AI generate letter</h1>
+      <h1 className="text-center dark font-bold text-3xl p-4">AI Generate Letter</h1>
       </nav>
       <hr />
       <Form className="space-y-3 max-w-[500px] mx-auto">
@@ -134,8 +134,8 @@ export default function Index() {
             />
           </div>
         ))}
-        <div>
-          <Button variant={"default"}>Generate with AI</Button>
+        <div className="flex justify-center">
+          <Button  variant={"default"}>Generate with AI</Button>
         </div>
       </Form>
     </div>
