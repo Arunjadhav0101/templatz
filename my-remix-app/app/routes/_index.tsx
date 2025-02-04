@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Button } from "~/components/ui/button";
 
+import Nav from "~/components/navbar";
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -8,12 +8,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+
 export default function Index() {
   return (
-   <div className="flex justify-center items-center h-screen">
-    <div></div>
-    <div><Button variant={"ghost"}>Click</Button></div>
-   </div>
+    <div className="  border border-white  rounded-lg">
+    
+      
+    </div>
   );
 }
-
