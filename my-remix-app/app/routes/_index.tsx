@@ -1,6 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
+import Details from "~/components/details";
+import Home from "~/components/home"
 
-import Nav from "~/components/navbar";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "New Remix App" },
@@ -13,7 +15,9 @@ export default function Index() {
   return (
     <div className="  border border-white  rounded-lg">
     
-      
+    <Home/> 
+         <Details/>
     </div>
   );
 }
+

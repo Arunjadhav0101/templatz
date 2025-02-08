@@ -1,9 +1,13 @@
-import { Button } from "~/components/ui/button"
-import { Input }  from "~/components/ui/input"
-import { Form } from "@remix-run/react"
+import { Button } from "~/components/ui/button";
+import { Input } from "~/components/ui/input";
+import { Form } from "@remix-run/react";
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 
 function GenerateLetter() {
-    const formFields = [
+  const details = [
+    {
+      title: "Sender details",
+      fields: [
         {
           type: "text",
           placeholder: "Enter first Name",
@@ -47,11 +51,16 @@ function GenerateLetter() {
           label: "Phone Number",
         },
         {
-          type: "date",
-          placeholder: "Enter a Date",
-          name: "sender-date",
-          label: "Date",
+          type: "text",
+          placeholder: "Enter Your Title",
+          name: "sender-title",
+          label: "Your Title (if applicable)",
         },
+      ],
+    },
+    {
+      title: "Receiver details",
+      fields: [
         {
           type: "text",
           placeholder: "Enter a Recipient's Name",
@@ -94,6 +103,11 @@ function GenerateLetter() {
           name: "company-zip",
           label: "ZIP",
         },
+      ],
+    },
+    {
+      title: "Letter details",
+      fields: [
         {
           type: "text",
           placeholder: "Enter a Prompt",
@@ -101,32 +115,48 @@ function GenerateLetter() {
           label: "Prompt",
         },
         {
-          type: "text",
-          placeholder: "Enter Your Title",
-          name: "sender-title",
-          label: "Your Title (if applicable)",
+          type: "date",
+          placeholder: "Enter a Date",
+          name: "sender-date",
+          label: "Date",
         },
-      ];
-    return (
-        <Form className="space-y-3 max-w-[500px] mx-auto pt-20">
-        {formFields.map((item) => (
-          <div key={item.name}>
-            <label htmlFor={item.name}>{item.label}</label>
-            <Input
-              className="mt-1"
-              type={item.type}
-              name={item.name}
-              placeholder={item.placeholder}
-              id={item.name}
-              required
-            />
-          </div>
-        ))}
-        <div className="flex justify-center">
-          <Button  variant={"default"}>Generate with AI</Button>
-        </div>
-      </Form>
+      ],
+    },
+  ];
+  return (
+    <Form className="space-y-3 max-w-[500px] mx-auto pt-2">
+      {details.map((value) => {
+        return (
+          <Card key={value.title}>
+            <CardHeader>
+              <CardTitle>{value.title}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {value.fields.map((field) => {
+                return (
+                  <div key={field.name}>
+                    <label htmlFor={field.name}> {field.label}:</label>
+                    <Input
+                      className="mt-1"
+                      type={field.type}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      id={field.name}
+                      defaultValue={""}
+                      required
+                    />
+                  </div>
+                );
+              })}
+            </CardContent>
+          </Card>
+        );
+      })}
 
-    )
+      <div className="flex justify-center">
+        <Button variant={"default"}>Generate with AI</Button>
+      </div>
+    </Form>
+  );
 }
-export default GenerateLetter
+export default GenerateLetter;
