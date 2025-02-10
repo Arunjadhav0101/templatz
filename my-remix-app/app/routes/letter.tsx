@@ -1,4 +1,3 @@
-import React from "react";
 
 const letter = {
   sender: {
@@ -25,10 +24,10 @@ const letter = {
     title: "[sender-title]",
   },
 };
-
 function Letter() {
+
   return (
-    <div id="letter">
+    <div id="letter" className="max-w-[2480px] border ">
       <div className="sender-details ">
         <p>{letter.sender.name}</p>
         <p>{letter.sender.address}</p>
