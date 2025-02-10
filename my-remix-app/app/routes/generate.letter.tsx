@@ -1,9 +1,13 @@
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { Form } from "@remix-run/react";
+import { Form, useActionData } from "@remix-run/react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import {  ActionFunctionArgs } from "@remix-run/node";
+import { generateLetter } from "~/lib/genai/generateLetter";
 
+import { LetterType } from "~/lib/genai/letterType";
 function GenerateLetter() {
+  const letter = useActionData<{response:LetterType}>()
   const details = [
     {
       title: "Sender details",
@@ -35,7 +39,7 @@ function GenerateLetter() {
         {
           type: "number",
           placeholder: "Enter Your Pin Code",
-          name: "sender-pin-num",
+          name: "sender-zip",
           label: "ZIP",
         },
         {
@@ -124,7 +128,8 @@ function GenerateLetter() {
     },
   ];
   return (
-    <Form className="space-y-3 max-w-[500px] mx-auto pt-2">
+    <>
+    <Form className="space-y-3 max-w-[500px] mx-auto pt-2" method="post" >
       {details.map((value) => {
         return (
           <Card key={value.title}>
@@ -157,6 +162,21 @@ function GenerateLetter() {
         <Button variant={"default"}>Generate with AI</Button>
       </div>
     </Form>
+    </>
   );
 }
 export default GenerateLetter;
+
+
+export async function action({request} : ActionFunctionArgs ){
+  console.log('submmited')
+  const formData = await request.formData();
+  let promptStr = "";
+  for(let [name, value] of formData.entries()){
+    promptStr+=`${name} : ${value}\n`
+  }
+  const letter = await generateLetter(promptStr)
+  return letter;
+}
+
+
