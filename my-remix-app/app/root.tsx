@@ -4,11 +4,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import { LetterDataProvider } from "./lib/letterContext";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -23,7 +23,7 @@ export const links: LinksFunction = () => [
   },
 ];
 // export async function loader() {
-  
+
 //   return Response.json({
 //     ENV: {
 //       STRIPE_PUBLIC_KEY:"MY_SECRET",
@@ -41,7 +41,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <LetterDataProvider>{children}</LetterDataProvider>
         <ScrollRestoration />
         {/* <script
           dangerouslySetInnerHTML={{

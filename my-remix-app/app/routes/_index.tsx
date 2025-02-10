@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import Details from "~/components/details";
-import Home from "~/components/home"
-
+import Home from "~/components/home";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,14 +9,11 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-
 export default function Index() {
   return (
     <div className="  border border-white  rounded-lg">
-    
-    <Home/> 
-         <Details/>
+      <Home />
+      <Details />
     </div>
   );
 }
-

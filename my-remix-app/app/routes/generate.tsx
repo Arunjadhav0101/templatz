@@ -1,13 +1,23 @@
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { Form, useActionData } from "@remix-run/react";
+import { Form, useActionData, useNavigate, useNavigation } from "@remix-run/react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {  ActionFunctionArgs } from "@remix-run/node";
 import { generateLetter } from "~/lib/genai/generateLetter";
 
 import { LetterType } from "~/lib/genai/letterType";
+import { useLetterData } from "~/lib/letterContext";
 function GenerateLetter() {
   const letter = useActionData<{response:LetterType}>()
+  const navigation = useNavigation();
+  const navigate = useNavigate()
+  const isSubmitting = navigation.state === "submitting"
+  const {setLetterData, letterData} = useLetterData();
+  if(letter?.response){
+    setLetterData(letter.response)
+    console.log(letterData);
+    navigate("/letter");
+  }
   const details = [
     {
       title: "Sender details",
@@ -159,7 +169,7 @@ function GenerateLetter() {
       })}
 
       <div className="flex justify-center">
-        <Button variant={"default"}>Generate with AI</Button>
+        <Button variant={"default"} disabled={isSubmitting}>{isSubmitting?"Generating...":"Generate with AI"}</Button>
       </div>
     </Form>
     </>
