@@ -15,12 +15,14 @@ export const useLetterData = (): LetterContextType => {
   return context;
 };
 
-export const LetterDataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [letterData, setLetterData] = useState<LetterType>({} as LetterType);
-  
-    return (
-      <LetterContext.Provider value={{ letterData, setLetterData }}>
-        {children}
-      </LetterContext.Provider>
-    );
-  }
+export const LetterDataProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [letterData, setLetterData] = useState<LetterType>({} as LetterType);
+
+  return (
+    <LetterContext.Provider value={{ letterData, setLetterData }}>
+      {children}
+    </LetterContext.Provider>
+  );
+};
