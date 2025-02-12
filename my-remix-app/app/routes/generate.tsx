@@ -3,10 +3,10 @@ import { Input } from "~/components/ui/input";
 import { Form, useActionData, useNavigate, useNavigation } from "@remix-run/react";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {  ActionFunctionArgs } from "@remix-run/node";
-import { generateLetter } from "~/lib/genai/generateLetter";
+import { generateLetter } from "~/utils/genai/generateLetter";
 import formFields from "~/assests/letterFormFields.json"
 import { LetterType } from "~/lib/genai/letterType";
-import { useLetterData } from "~/lib/letterContext";
+import { useLetterData } from "~/utils/letterContext";
 import { useEffect } from "react";
 
 function GenerateLetter() {
