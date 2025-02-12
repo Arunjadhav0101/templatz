@@ -5,7 +5,7 @@
 @media print {
   @page {
     size: A4; /* Set the page size to A4 */
-    margin: 0; /* Set margins (adjust as needed) */
+    margin: 0.5cm; /* Set margins (adjust as needed) */
   }
   #letter {
     margin: 0;
@@ -34,7 +34,7 @@
 }
 
 .content {
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid rgb(109, 109, 109);
   min-height: 29cm;
   width: 100%;

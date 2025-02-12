@@ -18,7 +18,7 @@ Please generate a formal letter in JSON format based on the provided details. En
     "address": "company-address, $ company-city, $ company-state, company-zip"
   },
   "subject": "subject",
-  "greeting": "Respected/Dear Title Name",
+  "greeting": "Respected/Dear Title Full Name",
   "body": ["Introduction",  "Purpose of the letter","Any additional relevant details"]
   "closing": "Yours sincerely/faithfully",
   "sender_details": {
@@ -52,7 +52,6 @@ Please generate a formal letter in JSON format based on the provided details. En
 7. **Closing Information**:  
    - Includes sender's name and title.
 
-Ensure the response is well-formatted in JSON without additional text.
+Provide a well-structured letter that is suitable for a final draft. Ensure the response is formatted strictly in JSON without additional text.
 `
 export default instructions
-const test=["Introduction",  "Purpose of the letter","Any additional relevant details"]

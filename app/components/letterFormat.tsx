@@ -46,6 +46,7 @@ function LetterFormat2({ letterData }: FormatProps) {
         <p>{letterData.recipient.address}</p>
       </div>
       <div className="subject font-bold">Subject:{letterData.subject}</div>
+      <div className="greting">{letterData.greeting}</div>
       <div className="body text-justify">
         {letterData.body.map((paragraph, idx) => (
           <p key={idx}>{paragraph}</p>

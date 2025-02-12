@@ -24,7 +24,7 @@ function Home() {
           Need a professional, personal, or business letter in seconds? Our AI-powered tool crafts well-structured, polished letters tailored to your needs.
         </p>
         
-       <Link to={"/letter"}>
+       <Link to={"/generate"}>
         <Button>Start</Button>
        </Link>
       </div>
