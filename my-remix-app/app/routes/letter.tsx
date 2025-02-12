@@ -30,7 +30,7 @@ const letterData = {
   },
   "subject": "Application for Backend Developer Position",
   "greeting": "Dear Mr. Smith,",
-  "body": "I am writing to express my interest in the Backend Developer position at Tech Innovators Inc. With my experience in JavaScript, Golang, and Remix.js, I am eager to contribute to your development team. I am particularly excited about the opportunity to work on scalable backend systems and bring efficient solutions to your projects. I have attached my resume for your review and look forward to discussing how my skills align with your needs.",
+  "body": ["I am writing to express my interest in the Backend Developer position at Tech Innovators Inc. With my experience in JavaScript, Golang, and Remix.js, I am eager to contribute to your development team.", "I am particularly excited about the opportunity to work on scalable backend systems and bring efficient solutions to your projects."," I have attached my resume for your review and look forward to discussing how my skills align with your needs."],
   "closing": "Thank you for your time and consideration. I look forward to your response.",
   "sender_details": {
       "name": "Alice Johnson",
@@ -58,7 +58,9 @@ export default function Letter() {
         </div>
         <div className="subject font-bold">Subject:{letterData.subject}</div>
         <div className="greting">{letterData.greeting}</div>
-        <div className="body">{letterData.body}</div>
+        <div className="body">{
+          letterData.body.map((paragraph, idx)=><p key={idx}>{paragraph}</p>)
+        }</div>
         <div>{letterData.closing}</div>
         <div className="sender-deatails">
           <p> {letterData.sender_details.name}</p>

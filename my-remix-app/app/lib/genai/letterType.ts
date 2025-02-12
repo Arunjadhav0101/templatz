@@ -14,7 +14,7 @@ export type LetterType = {
     };
     subject: string;
     greeting: string;
-    body: string;
+    body: string[];
     closing: string;
     sender_details: {
         name: string;
