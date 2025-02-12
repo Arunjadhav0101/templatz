@@ -5,25 +5,25 @@ Please generate a formal letter in JSON format based on the provided details. En
 
 {
   "sender": {
-    "name": "[sender-name]",
-    "address": "[sender-address], $ [sender-city], $ [sender-state], [sender-zip]",
-    "phone": "[sender-phone]",
-    "email": "[sender-email]"
+    "name": "sender-name",
+    "address": "sender-address, $ sender-city, $ sender-state, sender-zip",
+    "phone": "sender-phone",
+    "email": "sender-email"
   },
-  "date": "[date]",
+  "date": "date",
   "recipient": {
-    "name": "[recipient-name]",
-    "title": "[recipient-title]",
-    "company": "[company-name]",
-    "address": "[company-address], $ [company-city], $ [company-state], [company-zip]"
+    "name": "recipient-name",
+    "title": "recipient-title",
+    "company": "company-name",
+    "address": "company-address, $ company-city, $ company-state, company-zip"
   },
-  "subject": "[subject]",
-  "greeting": "[Respected/Dear] [Title] [Name]",
-  "body": "[Formatted letter content here with paragraphs, bullet points, or numbering where necessary]",
-  "closing": "[Yours sincerely/faithfully]",
+  "subject": "subject",
+  "greeting": "Respected/Dear Title Name",
+  "body": ["Introduction",  "Purpose of the letter","Any additional relevant details"]
+  "closing": "Yours sincerely/faithfully",
   "sender_details": {
-    "name": "[sender-name]",
-    "title": "[sender-title]"
+    "name": "sender-name",
+    "title": "sender-title"
   }
 }
 
@@ -39,8 +39,8 @@ Please generate a formal letter in JSON format based on the provided details. En
    - Summarizes the letter’s purpose clearly.
 
 4. **Greeting**:  
-   - Use "Respected [Title] [Name]" for educational institutes.  
-   - Otherwise, use "Dear [Title] [Name]."
+   - Use "Respected Title Name" for educational institutes.  
+   - Otherwise, use "Dear Title Name."
 
 5. **Body**:  
    - Write the letter in well-structured paragraphs.  
@@ -55,3 +55,4 @@ Please generate a formal letter in JSON format based on the provided details. En
 Ensure the response is well-formatted in JSON without additional text.
 `
 export default instructions
+const test=["Introduction",  "Purpose of the letter","Any additional relevant details"]
