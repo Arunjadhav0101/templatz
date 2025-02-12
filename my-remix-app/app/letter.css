@@ -1,3 +1,34 @@
 *{
     font-family: "Brawler", serif;
 }
+
+
+@media print {
+    @page {
+      size: A4; /* Set the page size to A4 */
+      margin: 0; /* Set margins (adjust as needed) */
+    }
+  
+    body {
+      font-size: 12pt;
+      color: black;
+      background: none; /* Remove background colors */
+    }
+  
+    .no-print {
+      display: none; /* Hide elements that shouldn't be printed */
+    }
+  
+    .page-break {
+      page-break-before: always; /* Force a new page */
+    }
+  
+    .content {
+      width: 100%;
+      max-width: 210mm; /* A4 width */
+      padding: 20mm; /* Keep spacing inside */
+      box-sizing: border-box;
+    }
+  }
+  
+  
