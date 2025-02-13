@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import {  ActionFunctionArgs } from "@remix-run/node";
 import { generateLetter } from "~/utils/genai/generateLetter";
 import formFields from "~/assests/letterFormFields.json"
-import { LetterType } from "~/lib/genai/letterType";
+import { LetterType } from "~/utils/genai/letterType";
 import { useLetterData } from "~/utils/letterContext";
 import { useEffect } from "react";
 

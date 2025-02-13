@@ -1,4 +1,4 @@
-import { LinksFunction } from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { useLetterData } from "~/utils/letterContext";
 import "../letter.css";
 import { LetterFormat1, LetterFormat2 } from "~/components/letterFormat";
@@ -17,18 +17,24 @@ export const links: LinksFunction = () => [
   },
 ];
 
+
+
 export default function LetterPage() {
   const { letterData } = useLetterData();
   console.log(letterData, "letter page");
-
+  const sendEmail = ()=>{
+    const url = `mailto:${encodeURIComponent("")}?subject=${encodeURIComponent(letterData.subject)}&body=${encodeURIComponent(letterData.body.join("\n"))}`
+    window.open(url, "_blank");
+  }
   if (letterData?.body) {
     return (
       <div>
         <div className="content flex flex-col gap-4 mx-auto" id="letter">
           <LetterFormat2 letterData={letterData}></LetterFormat2>
         </div>
-        <div>
+        <div className="flex justify-center gap-2">
           <Button onClick={() => window.print()}>Print</Button>
+          <Button onClick={sendEmail}>Send Email</Button>
         </div>
       </div>
     );
