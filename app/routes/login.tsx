@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card, CardContent } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
-import { Lock, Mail } from "lucide-react";
-
+import {  Lock, Mail } from "lucide-react";
+import { Link } from "lucide-react";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,7 +47,11 @@ export default function LoginPage() {
           </form>
           <div className="mt-4 text-center">
             <p className="text-sm">Or</p>
-            <Button className="w-full mt-2 bg-blue-500 text-white">Login with Google</Button>
+            <Link to={"/signup"}>
+              <Button className="w-full mt-2 bg-blue-500 text-white">
+                Login with Google
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </Card>
