@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card, CardContent } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Button } from "~/components/ui/button";
-import {  Lock, Mail } from "lucide-react";
-import { Link } from "lucide-react";
+import { Lock, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

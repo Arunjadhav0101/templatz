@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import About from "~/components/about";
 import Details from "~/components/details";
 import Home from "~/components/home";
 
@@ -16,6 +17,7 @@ export default function Index() {
     <div className="  border border-white  rounded-lg">
       <Home />
       <Details />
+      <About/>
       
     </div>
   );

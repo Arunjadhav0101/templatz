@@ -48,7 +48,7 @@ const SignupForm = () => {
   };
 
   return (
-    <Card className="max-w-md mx-auto mt-10 p-5 bg-white shadow-md rounded-lg">
+    <Card className="max-w-md mx-auto mt-10 p-5 bg-white shadow-lg rounded-lg">
       <h2 className="flex justify-center text-xl font-bold mb-4">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <Input
