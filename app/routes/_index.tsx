@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import About from "~/components/about";
 import Details from "~/components/details";
+import { GoogleGeminiEffectDemo } from "~/components/GeminiEffect";
 import Home from "~/components/home";
 
 
@@ -18,7 +19,8 @@ export default function Index() {
       <Home />
       <Details />
       <About/>
-      
+      <GoogleGeminiEffectDemo/>
+      <div className="h-screen bg-transparent"></div>
     </div>
   );
 }
