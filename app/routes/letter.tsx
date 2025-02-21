@@ -17,15 +17,25 @@ export const links: LinksFunction = () => [
   },
 ];
 
-
-
 export default function LetterPage() {
   const { letterData } = useLetterData();
   console.log(letterData, "letter page");
-  const sendEmail = ()=>{
-    const url = `mailto:${encodeURIComponent("")}?subject=${encodeURIComponent(letterData.subject)}&body=${encodeURIComponent(letterData.body.join("\n"))}`
-    window.open(url, "_blank");
-  }
+  const sendEmail = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /mobile|android|iphone|ipad|tablet/.test(userAgent);
+    if (isMobile) {
+      const url = `mailto:${encodeURIComponent(
+        ""
+      )}?subject=${encodeURIComponent(
+        letterData.subject
+      )}&body=${encodeURIComponent(letterData.body.join("\n"))}`;
+      window.open(url, "_blank");
+    }
+    let mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=""&su=${encodeURIComponent(
+      letterData.subject
+    )}&body=${encodeURIComponent(letterData.body.join("\n"))}`;
+    window.open(mailtoLink, "_blank");
+  };
   if (letterData?.body) {
     return (
       <div>
