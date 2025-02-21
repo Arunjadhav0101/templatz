@@ -144,6 +144,7 @@ const SignupForm = () => {
           Sign up
         </Button>
       </form>
+      
     </Card>
   );
 };

@@ -47,11 +47,15 @@ export default function LoginPage() {
           </form>
           <div className="mt-4 text-center">
             <p className="text-sm">Or</p>
-            <Link to={"/signup"}>
-              <Button className="w-full mt-2 bg-blue-500 text-white">
-                Login with Google
-              </Button>
-            </Link>
+
+            <Button className="w-full mt-2 bg-blue-500 text-white">
+              Login with Google
+            </Button>
+
+            <div className="mt-4 space-x-2">
+             <span> Dont have account? </span>
+              <Link to={"/signup"} className="text-blue-600 font-semibold">SignUp</Link>
+            </div>
           </div>
         </CardContent>
       </Card>

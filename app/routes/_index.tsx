@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="  border border-white  rounded-lg">
+    <div className="">
       <Home />
       <Details />
       <About/>
