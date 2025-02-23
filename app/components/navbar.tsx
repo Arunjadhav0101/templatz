@@ -5,17 +5,17 @@ export default function Navbar() {
       <h1 className="text-2xl font-bold">Templatz</h1>
       <ul className="flex space-x-6  font-medium">
         <li>
-          <Link to={"/"} className="p-2 rounded-lg ">
+          <Link to={"/"} className=" hover:text-orange-300 p-2 rounded-lg ">
             Home
           </Link>
         </li>
         <li>
-          <Link to="#" className="hover:text-orange-300 p-2 rounded-lg">
+          <Link to={"/about"} className="hover:text-orange-300 p-2 rounded-lg">
             About
           </Link>
         </li>
         <li>
-          <Link to="#" className="hover:text-orange-300 p-2 rounded-lg">
+          <Link to={"/contact"} className="hover:text-orange-300 p-2 rounded-lg">
             Contact
           </Link>
         </li>

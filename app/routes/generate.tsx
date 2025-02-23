@@ -30,7 +30,7 @@ function GenerateLetter() {
         return (
           <Card key={value.title}>
             <CardHeader>
-              <CardTitle>{value.title}</CardTitle>
+              <CardTitle className="text-2xl">{value.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {value.fields.map((field) => {
@@ -55,7 +55,7 @@ function GenerateLetter() {
       })}
 
       <div className="flex justify-center">
-        <Button variant={"default"} disabled={isSubmitting}>{isSubmitting?"Generating...":"Generate with AI"}</Button>
+        <Button className="relative size-32 " variant={"default"} disabled={isSubmitting}>{isSubmitting?"Generating...":"Generate with AI"}</Button>
       </div>
     </Form>
     </>

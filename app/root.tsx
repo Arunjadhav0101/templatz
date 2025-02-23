@@ -43,7 +43,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Navbar/>
+        <div className="pt-[100px]">
+
         <LetterDataProvider>{children}</LetterDataProvider>
+        </div>
         <ScrollRestoration />
         {/* <script
           dangerouslySetInnerHTML={{
