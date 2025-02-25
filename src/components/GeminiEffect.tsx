@@ -16,7 +16,7 @@ export default function GeminiEffect() {
     const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
     return(
         <div
-        className="container w-[90%] mx-auto h-[400vh] bg-black dark:border dark:border-white/[0.1] rounded-[2rem] relative pt-40 overflow-clip"
+        className="container max-w-fit p-8 mx-auto h-[400vh] bg-black dark:border dark:border-white/[0.1] rounded-[2rem] relative pt-40 overflow-clip"
         ref={ref}
       >
         <GoogleGeminiEffect

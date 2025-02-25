@@ -31,9 +31,9 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 0 0% 11%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
-    --card: 0 0% 8%;
+    --card: 0 0% 11%;
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
@@ -58,14 +58,33 @@
   }
 }
 
-.test{
-  color:hsl(165, 100%, 42%)
-}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: green;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: green;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: green;
+  border-radius: 10px;
+  border: 2px solid green;
 }

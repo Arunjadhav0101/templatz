@@ -31,16 +31,16 @@ function LetterForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-[400px] md:max-w-[650px] mx-auto py-8 p-4"
+      className="max-w-[400px] w-full md:max-w-[650px] mx-auto py-8 p-4"
     >
       <div className="grid gap-8">
-        {formFields.map((value: any) => (
+        {formFields.map((value) => (
           <Card key={value.title}>
             <CardHeader>
               <CardTitle className="text-2xl">{value.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {value.fields.map((field: any) => {
+              {value.fields.map((field) => {
                 return (
                   <div key={field.name}>
                     <label htmlFor={field.name}> {field.label}:</label>

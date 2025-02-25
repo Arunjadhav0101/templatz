@@ -5,6 +5,7 @@ import {
 } from "@google/generative-ai";
 import instructions from "./instructions";
 import { NextResponse } from "next/server";
+import { FieldValues } from "react-hook-form";
 const genAI = new GoogleGenerativeAI(process.env.NEXT_GEN_AI_KEY as string);
 const safetySettings = [
   {
@@ -48,7 +49,7 @@ export async function generateContent(prompt: string) {
   }
 }
 
-function getPrompt(data: any): string {
+function getPrompt(data: FieldValues): string {
   let promptStr = "";
   for (const key in data) {
     promptStr += `${key}: ${data[key]}\n`;

@@ -2,6 +2,8 @@
 
 import { brawler } from "@/lib/fonts";
 import { LetterFormat1 } from "./Formates";
+import { Skeleton } from "@/components/ui/skeleton"
+
 import clsx from "clsx";
 import "./letter.css"
 const sampleLetter = {
@@ -39,11 +41,23 @@ function Letter() {
       <div
         id="letter"
         className={clsx(
-          "flex flex-col gap-2 border content mx-auto bg-white z-50 ",
+          "flex flex-col gap-2 border content mx-auto bg-background z-50 ",
           brawler.className
         )}
       >
-        <LetterFormat1 letterData={sampleLetter} />
+      {/* <LetterFormat1 letterData={sampleLetter} /> */}
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <br />
+      <Skeleton className="w-[90%] h-[20px] rounded-full" />
+      <Skeleton className="w-full h-[20px] rounded-full" />
+      <Skeleton className="w-full h-[20px] rounded-full" />
+      <br />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      <Skeleton className="w-[200px] h-[20px] rounded-full" />
       </div>
   );
 }

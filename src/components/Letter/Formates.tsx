@@ -5,8 +5,7 @@ type FormatProps = {
   className?: string;
 };
 
-function LetterFormat1({ letterData, className }: FormatProps) {
-  className;
+function LetterFormat1({ letterData }: FormatProps) {
   return (
     <>
       <div className="sender-details ">
