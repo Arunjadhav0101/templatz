@@ -22,7 +22,7 @@ export const GoogleGeminiEffect = ({
   return (
     
    
-    <div className={cn("sticky top-80", className)}>
+    <div className={cn("sticky top-[200px]", className)}>
       <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
         {title || `Build with Aceternity UI`}
       </p>
@@ -32,8 +32,8 @@ export const GoogleGeminiEffect = ({
         works!`}
       </p>
       <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <Button variant={"outline"} className=" w-fit mx-auto ">
-          Generate
+        <Button variant={"outline"} className=" w-fit mx-auto">
+          Gemini
         </Button>
       </div>
       <svg

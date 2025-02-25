@@ -1,6 +1,3 @@
-
-
-import HeroSectionCarousel from "./HeroSectionCarousel";
 import { Button } from "./ui/button";
 
 export default function Herosection() {
@@ -19,7 +16,7 @@ export default function Herosection() {
         </p>
         <Button className="mt-4">CREATE YOUR COVER LETTER</Button>
       </div>
-    <HeroSectionCarousel/>
+    {/* <HeroSectionCarousel/> */}
       <div>
       
       </div>
