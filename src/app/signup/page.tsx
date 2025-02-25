@@ -21,7 +21,7 @@ const SignupForm = () => {
   };
 
   const validate = () => {
-    let newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {};
    
       newErrors.phoneNumber = "Invalid phone number";
     if (!formData.email.includes("@")) newErrors.email = "Invalid email";

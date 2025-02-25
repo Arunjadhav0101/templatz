@@ -1,24 +1,10 @@
-"use client"
+
+
+import HeroSectionCarousel from "./HeroSectionCarousel";
 import { Button } from "./ui/button";
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 export default function Herosection() {
-  const testimonials = [
-    {
-      quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "/ram.jpg",
-    },
-    {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "/informal.jpg",
-    },
-  ];
+
 
   return (
     <main className="flex flex-col md:flex-row w-screen h-screen items-center text-center mt-16 px-4 gap-10 md:gap-40">
@@ -33,9 +19,9 @@ export default function Herosection() {
         </p>
         <Button className="mt-4">CREATE YOUR COVER LETTER</Button>
       </div>
-    
+    <HeroSectionCarousel/>
       <div>
-        <AnimatedTestimonials testimonials={testimonials} />
+      
       </div>
     </main>
   );
