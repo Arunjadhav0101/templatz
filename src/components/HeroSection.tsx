@@ -4,8 +4,8 @@ import { Spotlight } from "./ui/Spotlight";
 
 export default function Herosection() {
   return (
-    <main className="conatiner dark:bg-neutral-950 flex w-screen h-screen items-center justify-center  text-center px-4 gap-10 md:gap-40">
-      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#00D6A1"  />
+    <main className="conatiner dark:bg-neutral-950 flex w-screen h-screen items-center justify-center  text-center px-4 gap-10 md:gap-40 overflow-hidden">
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white"  />
       <div>
         <h2 className="pt-20 text-5xl md:text-7xl font-bold max-w-[800px]">
           AI-Powered Resume & Letter Generator

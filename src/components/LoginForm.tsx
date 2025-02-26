@@ -16,13 +16,12 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <Card className="w-96 shadow-lg bg-white">
+      <Card className="w-96 shadow-lg mx-auto">
         <CardContent className="pt-4">
           <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2" />
               <Input
                 type="email"
                 placeholder="Email"
@@ -43,7 +42,7 @@ export default function LoginForm() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full" size={"lg"}>
+            <Button type="submit" className="w-full">
               Login
             </Button>
           </form>
@@ -51,6 +50,7 @@ export default function LoginForm() {
             <p className="text-sm">Or</p>
 
             <Button variant={"outline"} className="w-full mt-2">
+
               Login with Google
             </Button>
 
@@ -63,6 +63,5 @@ export default function LoginForm() {
           </div>
         </CardContent>
       </Card>
-    </div>
   );
 }

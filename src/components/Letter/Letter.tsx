@@ -12,6 +12,7 @@ import LetterEditorNav from "../Navbar/letter-nav";
 import { usePDF } from "react-to-pdf";
 import React, { useState } from "react";
 import { LetterType } from "./LetterType";
+import Navbar from "../Navbar/Navbar";
 
 function Letter() {
   const letterState = useSelector((state: RootState) => state.letter);
@@ -19,11 +20,11 @@ function Letter() {
   const { targetRef, toPDF } = usePDF({ filename: letter?.subject });
   const [format, setFormat] = useState<"format1" | "format2">("format2");
   return (
-    <>
+    <div className="container mx-auto w-full bg-background py-20 px-4 print:px-0 overflow-y-auto print:overflow-hidden print:py-0 fixed top-0 left-0 right-0 bottom-0 z-40">
       <div
         id="letter"
         className={clsx(
-          "max-w-[21cm] w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-50 overflow-y-auto fixed top-0 left-0 right-0 p-4 ",
+          "max-w-[21cm] w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-40 overflow-y-auto p-4 rounded-xl ",
           brawler.className
         )}
         ref={targetRef}
@@ -38,8 +39,8 @@ function Letter() {
         )}
       </div>
 
-      <LetterEditorNav toPDF={toPDF} setFormat={setFormat} />
-    </>
+      <LetterEditorNav toPDF={toPDF} setFormat={setFormat} className="" />
+    </div>
   );
 }
 

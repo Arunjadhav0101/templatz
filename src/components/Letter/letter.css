@@ -1,7 +1,6 @@
 @media print {
   @page {
-    size: A4; /* Set the page size to A4 */
-    margin: 0.5cm; /* Set margins (adjust as needed) */
+    margin: 0!important; /* Set margins (adjust as needed) */
   }
   #letter {
     margin: 0cm;
@@ -11,7 +10,9 @@
     color: black;
     background: none; /* Remove background colors */
   }
-
+  * {
+    background: none !important; /* Remove all background graphics */
+  }
   .no-print {
     display: none; /* Hide elements that shouldn't be printed */
   }
@@ -32,7 +33,37 @@
 .content {
   padding: 1.5rem;
   border: 1px solid rgb(109, 109, 109);
-  min-height: fit-content;
+  min-height: 297mm; /* A4 height */
   width: 100%;
   max-width: 210mm !important; /* A4 width */
+}
+
+.letter-navbar-top {
+  grid-area: navbar;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.main {
+  grid-area: main;
+  padding: 1.5rem;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.letter-container {
+  display: grid;
+  grid-template-areas:
+    "navbar"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }

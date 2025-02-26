@@ -23,9 +23,10 @@ const LetterPage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-screen h-screen fixed top-0 left-0 right-0 bg-background z-50"
+            className="w-screen h-screen  bg-background z-40 pb-20"
           >
             <Letter />
+
             <Button
               variant={"secondary"}
               onClick={() => setShowLetter(false)}
@@ -36,9 +37,6 @@ const LetterPage: React.FC = () => {
           </motion.div>
         )}
       </div>
-      <Button className="print:hidden" onClick={() => setShowLetter(true)}>
-        dispatch
-      </Button>
     </div>
   );
 };
