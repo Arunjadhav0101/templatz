@@ -58,8 +58,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -68,23 +66,22 @@
     @apply bg-background text-foreground;
     overflow-x: hidden;
   }
-}
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--foreground) var(--background);
+  }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: green;
-}
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
 
-*::-webkit-scrollbar {
-  width: 8px;
-}
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--foreground);
+    border-radius: 10px;
+  }
 
-*::-webkit-scrollbar-track {
-  background: green;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: green;
-  border-radius: 10px;
-  border: 2px solid green;
+  *::-webkit-scrollbar-track {
+    background: var(--background);
+  }
 }

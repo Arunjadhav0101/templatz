@@ -1,65 +1,63 @@
 "use client";
 
 import { brawler } from "@/lib/fonts";
-import { LetterFormat1 } from "./Formates";
-import { Skeleton } from "@/components/ui/skeleton"
+import LetterFormatSelector from "./Formates";
+import { Skeleton } from "@/components/ui/skeleton";
 
 import clsx from "clsx";
-import "./letter.css"
-const sampleLetter = {
-  sender: {
-    name: "Rameshwar Patil",
-    address: [
-      "SYBCA(science) Div B Roll no : [ROLL_NO],",
-      "Dr.DY Patil Arts Commerce & Science Pimpri Pune, Maharastra, 411018",
-    ],
-    phone: "9890472354",
-    email: "rameshwarpatil9689@gmail.com",
-  },
-  date: "October 26, 2023",
-  recipient: {
-    name: "Dr Ranjit Patil",
-    title: "Principal",
-    company: "Dr.DY Patil Arts Commerce & Science Pimpri Pune",
-    address: "Sant Tukram Nagar, Pimpri, Maharastra, 411018",
-  },
-  subject: "Leave Application",
-  greeting: "Respected Dr Ranjit Patil",
-  body: [
-    "I am writing to request a leave of absence from college.",
-    "I need to be absent from college for [Number] days, from [Start Date] to [End Date], due to [Reason for Leave].",
-    "I will ensure to catch up on any missed coursework upon my return.",
-  ],
-  closing: "Yours sincerely",
-  sender_details: {
-    name: "Rameshwar Patil",
-    title: "Student",
-  },
-};
+import "./letter.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import LetterEditorNav from "../Navbar/letter-nav";
+import { usePDF } from "react-to-pdf";
+import React, { useState } from "react";
+import { LetterType } from "./LetterType";
+
 function Letter() {
+  const letterState = useSelector((state: RootState) => state.letter);
+  const { letter } = letterState;
+  const { targetRef, toPDF } = usePDF({ filename: letter?.subject });
+  const [format, setFormat] = useState<"format1" | "format2">("format2");
   return (
+    <>
       <div
         id="letter"
         className={clsx(
-          "flex flex-col gap-2 border content mx-auto bg-background z-50 ",
+          "max-w-[21cm] w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-50 overflow-y-auto fixed top-0 left-0 right-0 p-4 ",
           brawler.className
         )}
+        ref={targetRef}
       >
-      {/* <LetterFormat1 letterData={sampleLetter} /> */}
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <br />
-      <Skeleton className="w-[90%] h-[20px] rounded-full" />
-      <Skeleton className="w-full h-[20px] rounded-full" />
-      <Skeleton className="w-full h-[20px] rounded-full" />
-      <br />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
-      <Skeleton className="w-[200px] h-[20px] rounded-full" />
+        {letter ? (
+          <LetterFormatSelector
+            letterData={letter as LetterType}
+            format={format}
+          />
+        ) : (
+          <LetterSkeleton />
+        )}
       </div>
+
+      <LetterEditorNav toPDF={toPDF} setFormat={setFormat} />
+    </>
   );
 }
 
 export default Letter;
+
+const LetterSkeleton = () => (
+  <>
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <br />
+    <Skeleton className="w-[90%] h-[20px] rounded-full" />
+    <Skeleton className="w-full h-[20px] rounded-full" />
+    <Skeleton className="w-full h-[20px] rounded-full" />
+    <br />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+    <Skeleton className="w-[200px] h-[20px] rounded-full" />
+  </>
+);

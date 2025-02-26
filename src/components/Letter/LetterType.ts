@@ -1,7 +1,7 @@
 export type LetterType = {
     sender: {
         name: string;
-        address: string[];
+        address: string[] | string;
         phone: string;
         email: string;
     };
@@ -14,7 +14,7 @@ export type LetterType = {
     };
     subject: string;
     greeting: string;
-    body: string[];
+    body: string[] | string;
     closing: string;
     sender_details: {
         name: string;

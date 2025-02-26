@@ -19,9 +19,12 @@ const letterSlice = createSlice({
         },
         setLetters:(state, action) =>{
             state.letters = action.payload
-        }
+        },
+        updateLetter(state, action) {
+             state.letter={ ...state, ...action.payload };
+          },
     }
 })
 
-export const {setLetter, setLetters} = letterSlice.actions
+export const {setLetter,updateLetter, setLetters} = letterSlice.actions
 export default letterSlice.reducer

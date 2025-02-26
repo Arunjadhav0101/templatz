@@ -11,8 +11,14 @@ export async function POST(request: NextRequest) {
   const prompt = getPrompt(body);
   try {
     const result = await generateContent(prompt);
+    if(result instanceof Error) {
+      console.log("error", result.message);
+      return NextResponse.json({ error: result.message },{ status: 500})
+    }
     return result;
   } catch (error) {
+    console.log("api error at generate-letter :::",error);
+    
     return NextResponse.json({ error: "Internal server error", details: error },{ status: 500})
   }
 }

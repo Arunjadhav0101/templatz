@@ -7,22 +7,31 @@ import { Button } from "../ui/button";
 import { FieldValues, useForm } from "react-hook-form";
 import { generateLetter } from "@/lib/client/generateLetter";
 import { useState, useTransition } from "react";
+import { setLetter } from "@/store/letterSlice";
+import { useDispatch } from "react-redux";
 
-function LetterForm() {
+function LetterForm({setShowLetter}: {setShowLetter: (value: boolean) => void}) {
   const { register, handleSubmit } = useForm<FieldValues>();
   const [error, setError] = useState("");
   const [isSubmitting, startLoading] = useTransition();
+  const dispatch = useDispatch();
   const onSubmit = async (data: FieldValues) => {
     startLoading(async () => {
+    dispatch(setLetter(null));
       try {
         const result = await generateLetter(data);
+        if(result instanceof Error) {
+          console.log("error", result.message);
+        }
         console.log(result);
+        dispatch(setLetter(result));
+        setShowLetter(true);
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
           console.log(error.message);
         } else {
-          setError("An unknown error occurred");
+          setError("An unknown error occurred"); 
         }
       }
     });

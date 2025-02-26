@@ -15,7 +15,7 @@ Please generate a formal letter in JSON format based on the provided details. En
     "name": "recipient-name",
     "title": "recipient-title",
     "company": "company-name",
-    "address": "company-address, $ company-city, $ company-state, company-zip"
+    "address": "company-address,  company-city,  company-state, company-zip"
   },
   "subject": "subject",
   "greeting": "Respected/Dear Title Full Name",
@@ -52,6 +52,6 @@ Please generate a formal letter in JSON format based on the provided details. En
 7. **Closing Information**:  
    - Includes sender's name and title.
 
-Provide a well-structured letter that is suitable for a final draft. Ensure the response is formatted strictly in JSON without additional text.
+Provide a well-structured letter that is suitable for a final draft. Correct spelling mistakes, typo error if any. Ensure the response is formatted strictly in JSON without additional text.
 `
 export default instructions

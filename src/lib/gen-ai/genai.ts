@@ -6,7 +6,7 @@ import {
 import instructions from "./instructions";
 import { NextResponse } from "next/server";
 import { FieldValues } from "react-hook-form";
-const genAI = new GoogleGenerativeAI(process.env.NEXT_GEN_AI_KEY as string);
+const genAI = new GoogleGenerativeAI(process.env.NEXT_GEN_AI_API_KEY as string);
 const safetySettings = [
   {
     category: HarmCategory.HARM_CATEGORY_HARASSMENT,
