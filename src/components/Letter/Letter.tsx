@@ -12,7 +12,6 @@ import LetterEditorNav from "../Navbar/letter-nav";
 import { usePDF } from "react-to-pdf";
 import React, { useState } from "react";
 import { LetterType } from "./LetterType";
-import Navbar from "../Navbar/Navbar";
 
 function Letter() {
   const letterState = useSelector((state: RootState) => state.letter);

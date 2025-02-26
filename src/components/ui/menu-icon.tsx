@@ -1,6 +1,5 @@
 "use client"
 import { motion } from "framer-motion";
-import { Button } from "./button";
 
 const MenuIcon = ({ isOpen, setOpen }: { isOpen: boolean; setOpen: (open: boolean) => void }) => {
     return (
