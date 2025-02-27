@@ -3,7 +3,7 @@ import { Button } from "./button";
 import { Moon, Sun } from "lucide-react";
 
 const ToggleMode: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const toggleMode = () => {
     setDarkMode(!darkMode);
     if (darkMode) {
