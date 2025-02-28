@@ -7,10 +7,10 @@ import { Button } from "../ui/button";
 import { FieldValues, useForm } from "react-hook-form";
 import { generateLetter } from "@/lib/client/generateLetter";
 import { useState, useTransition } from "react";
-import { setLetter } from "@/store/letterSlice";
+import { setLetter, setShowLetter } from "@/store/letterSlice";
 import { useDispatch } from "react-redux";
 
-function LetterForm({setShowLetter}: {setShowLetter: (value: boolean) => void}) {
+function LetterForm() {
   const { register, handleSubmit } = useForm<FieldValues>();
   const [error, setError] = useState("");
   const [isSubmitting, startLoading] = useTransition();
@@ -25,7 +25,7 @@ function LetterForm({setShowLetter}: {setShowLetter: (value: boolean) => void}) 
         }
         console.log(result);
         dispatch(setLetter(result));
-        setShowLetter(true);
+        dispatch(setShowLetter(true));
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);

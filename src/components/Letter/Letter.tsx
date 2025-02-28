@@ -3,7 +3,6 @@
 import { brawler } from "@/lib/fonts";
 import LetterFormatSelector from "./Formates";
 import { Skeleton } from "@/components/ui/skeleton";
-
 import clsx from "clsx";
 import "./letter.css";
 import { useSelector } from "react-redux";
@@ -23,7 +22,7 @@ function Letter() {
       <div
         id="letter"
         className={clsx(
-          "max-w-[21cm] w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-40 overflow-y-auto p-4 rounded-xl ",
+          " w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-40 overflow-y-auto p-4 rounded-xl ",
           brawler.className
         )}
         ref={targetRef}

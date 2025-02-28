@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import "@/components/Letter/letter.css";
 import LetterForm from "@/components/Letter/LetterForm";
 import { motion } from "motion/react";
@@ -8,15 +8,18 @@ import { ArrowLeft } from "lucide-react";
 import Letter from "@/components/Letter/Letter";
 import "@/components/Letter/letter.css";
 import useLetter from "@/lib/letter/uesLetter";
+import {  useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { setShowLetter } from "@/store/letterSlice";
 
 const LetterPage: React.FC = () => {
-  const [showLetter, setShowLetter] = useState(false);
+  const {showLetter} = useSelector((state:RootState)=>state.letter);
 
   return (
     <div>
       <div className="container mx-auto w-full relative ">
         <div className="print:hidden flex flex-wrap">
-          <LetterForm setShowLetter={setShowLetter} />
+          <LetterForm />
         </div>
 
         {showLetter && (

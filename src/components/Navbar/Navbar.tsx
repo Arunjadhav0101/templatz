@@ -2,7 +2,7 @@
 import { Menubar } from "@/components/ui/menubar";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { LogIn } from "lucide-react";
+import { ArrowLeft, LogIn } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -23,12 +23,21 @@ function Navbar() {
           )}
         >
           <div className="w-full flex justify-between items-center">
-            <Link href={"/"}>
-              <h1 className="text-2xl font-bold text-center">Templatz</h1>
-            </Link>
+            {pathname === "/letter" ? (
+              <Link href={"/"}>
+                 <Button variant={"ghost"}>
+                <ArrowLeft />
+              </Button>
+              </Link>
+             
+            ) : (
+              <Link href={"/"}>
+                <h1 className="text-2xl font-bold text-center">Templatz</h1>
+              </Link>
+            )}
 
             <div className="flex items-center space-x-4">
-                <ToggleMode />
+              <ToggleMode />
               {/* Mobile Menu Toggle */}
               <div className="md:hidden">
                 <MenuIcon
