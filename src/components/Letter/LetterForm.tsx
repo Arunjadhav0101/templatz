@@ -71,7 +71,7 @@ function LetterForm() {
         ))}
         {error && <p>{error}</p>}
         <Button
-          className="mx-auto w-[200px] p-5"
+          className="mx-auto w-[200px] p-5 font-bold"
           type="submit"
           disabled={isSubmitting}
         >
