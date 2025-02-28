@@ -21,6 +21,7 @@ export default function GeminiEffect() {
       >
         <GoogleGeminiEffect
         title="Powered by Google Gemini"
+        description="Leveraged gemini-1.5-flash Model"
           pathLengths={[
             pathLengthFirst,
             pathLengthSecond,

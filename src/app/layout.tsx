@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${montserrat.className} antialiased`}
+        className={`${geistSans.variable} ${montserrat.className} antialiased overflow-x-hidden`}
       >
         <Navbar/>
         {children}

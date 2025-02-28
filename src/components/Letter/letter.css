@@ -34,11 +34,11 @@
   padding: 1.5rem;
   border: 1px solid rgb(109, 109, 109);
   min-height: 297mm; /* A4 height */
-  width: 100%;
   max-width: 210mm !important; /* A4 width */
+  width: 100%;
 }
 
-.letter-navbar-top {
+/* .letter-navbar-top {
   grid-area: navbar;
   background-color: #333;
   color: white;
@@ -48,8 +48,8 @@
 .main {
   grid-area: main;
   padding: 1.5rem;
-}
-
+} */
+/* 
 .footer {
   grid-area: footer;
   background-color: #333;
@@ -66,4 +66,4 @@
     "footer";
   grid-template-rows: auto 1fr auto;
   height: 100vh;
-}
+} */
