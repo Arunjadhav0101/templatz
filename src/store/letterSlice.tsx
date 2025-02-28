@@ -3,12 +3,14 @@ import { LetterType } from "@/components/Letter/LetterType";
 interface LetterState {
     letter: LetterType | null,
     letters: LetterType[],
-    error:null|string
+    error:null|string,
+    showLetter:boolean;
 }
 const initialState:LetterState = {
     letter:null,
     letters:[],
-    error:null
+    error:null,
+    showLetter: false
 }
 const letterSlice = createSlice({
     name: "letter",
@@ -23,8 +25,11 @@ const letterSlice = createSlice({
         updateLetter(state, action) {
              state.letter={ ...state, ...action.payload };
           },
+          setShowLetter(state, action){
+                state.showLetter = action.payload
+          }
     }
 })
 
-export const {setLetter,updateLetter, setLetters} = letterSlice.actions
+export const {setLetter,updateLetter, setLetters, setShowLetter} = letterSlice.actions
 export default letterSlice.reducer

@@ -6,7 +6,6 @@ import {
   Layout,
   MailPlusIcon,
   Printer,
-  Share2,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -40,7 +39,7 @@ export default function LetterEditorNav({
 }) {
   const letterState = useSelector((state: RootState) => state.letter);
   return (
-    <div className={cn("container w-5/6 mx-auto rounded-lg flex items-center fixed bottom-2 left-0 right-0 z-50 border border-input shadow-md print:hidden h-[60px] bg-background/40 backdrop-blur-sm", className)}>
+    <div className={cn("container w-full md:w-5/6  mx-auto md:rounded-lg flex items-center fixed bottom-0 md:bottom-2 left-0 right-0 z-50 border border-input shadow-md print:hidden h-[60px] bg-background/40 backdrop-blur-sm", className)}>
       {/* Mobile Vertical Nav */}
 
       <nav className=" w-full print:hidden">
@@ -53,10 +52,6 @@ export default function LetterEditorNav({
           >
             <Export className="h-4 w-4" />
             Export
-          </Button>
-          <Button variant="ghost"  className="">
-            <Share2 className="h-4 w-4" />
-            Share
           </Button>
           <Dialog>
             <DialogTrigger className="inline-flex text-xs items-center py-3 px-4  gap-2 hover:bg-black/20 rounded-md">
