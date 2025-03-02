@@ -28,7 +28,7 @@ export function OurJourney() {
               />
             </div>
           </div>
-          <Link href="https://your-live-preview-link.com/v1" target="_blank">
+          <Link href="https://letter-template.netlify.app/" target="_blank">
             <span className="text-blue-500 hover:underline text-xs md:text-sm">
               Live Preview
             </span>
@@ -62,7 +62,7 @@ export function OurJourney() {
               />
             </div>
           </div>
-          <Link href="https://your-live-preview-link.com/v2" target="_blank">
+          <Link href="https://ai-letter-template.vercel.app/" target="_blank">
             <span className="text-blue-500 hover:underline text-xs md:text-sm">
               Live Preview
             </span>
@@ -96,7 +96,7 @@ export function OurJourney() {
               />
             </div>
           </div>
-          <Link href="https://your-live-preview-link.com/v3" target="_blank">
+          <Link href="https://templatz.vercel.app" target="_blank">
             <span className="text-blue-500 hover:underline text-xs md:text-sm">
               Live Preview
             </span>

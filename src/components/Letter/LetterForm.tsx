@@ -6,7 +6,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { FieldValues, useForm } from "react-hook-form";
 import { generateLetter } from "@/lib/client/generateLetter";
-import { useState, useTransition } from "react";
+import {  useState, useTransition } from "react";
 import { setLetter, setShowLetter } from "@/store/letterSlice";
 import { useDispatch } from "react-redux";
 
@@ -15,6 +15,7 @@ function LetterForm() {
   const [error, setError] = useState("");
   const [isSubmitting, startLoading] = useTransition();
   const dispatch = useDispatch();
+
   const onSubmit = async (data: FieldValues) => {
     startLoading(async () => {
     dispatch(setLetter(null));

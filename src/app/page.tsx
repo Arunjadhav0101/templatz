@@ -5,7 +5,7 @@ import { OurJourney } from "@/components/OurJourney";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen bg-prima">
+    <div className="h-screen w-screen bg-neutral-950">
       {/* <Navbar/> */}
        <Herosection/>
        <OurJourney/>
