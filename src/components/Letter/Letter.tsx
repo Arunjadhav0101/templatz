@@ -18,7 +18,7 @@ function Letter() {
   const { targetRef, toPDF } = usePDF({ filename: letter?.subject });
   const [format, setFormat] = useState<"format1" | "format2">("format2");
   return (
-    <div className="container mx-auto w-full bg-background py-20 px-4 print:px-0 overflow-y-auto print:overflow-hidden print:py-0 fixed top-0 left-0 right-0 bottom-0 z-40">
+    <div className="container mx-auto w-full bg-background py-20 px-4 print:px-0 overflow-y-auto print:overflow-hidden print:py-0 fixed top-0 left-0 right-0 bottom-0 z-40 print:m-1">
       <div
         id="letter"
         className={clsx(
