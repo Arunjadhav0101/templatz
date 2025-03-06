@@ -18,11 +18,11 @@ function Letter() {
   const { targetRef, toPDF } = usePDF({ filename: letter?.subject });
   const [format, setFormat] = useState<"format1" | "format2">("format2");
   return (
-    <div className="container mx-auto w-full bg-background py-20 px-4 print:px-0 overflow-y-auto print:overflow-hidden print:py-0 fixed top-0 left-0 right-0 bottom-0 z-40 print:m-1">
+    <div className="border fixed top-0 left-0 right-0 bg-background w-[100vw] h-[100vh] z-40">
       <div
         id="letter"
         className={clsx(
-          " w-full flex flex-col gap-2 max-h-fit border-4 content mx-auto bg-background print:bg-white z-40 overflow-y-auto p-4 rounded-xl ",
+          "mx-auto",
           brawler.className
         )}
         ref={targetRef}

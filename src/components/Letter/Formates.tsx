@@ -82,7 +82,7 @@ function LetterFormat1({ letterData }: FormatProps) {
       >
         {letterData.greeting},
       </motion.div>
-      <div className="body text-justify">
+      <div className="body text-justify flex flex-col gap-1">
         {Array.isArray(letterData.body)
           ? letterData.body.map((paragraph: string, idx: number) =>
               renderAnimatedLine(

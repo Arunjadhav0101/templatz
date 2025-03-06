@@ -2,7 +2,6 @@ const instructions = `
 Please generate a formal letter in JSON format based on the provided details. Ensure the response follows this structured format:
 
 ### JSON Response Structure:
-
 {
   "sender": {
     "name": "sender-name",
@@ -19,7 +18,7 @@ Please generate a formal letter in JSON format based on the provided details. En
   },
   "subject": "subject",
   "greeting": "Respected/Dear Title Full Name",
-  "body": ["Introduction",  "Purpose of the letter","Any additional relevant details"]
+  "body": ["Introduction","Main Content ","Call to Action"],
   "closing": "Yours sincerely/faithfully",
   "sender_details": {
     "name": "sender-name",
@@ -30,7 +29,7 @@ Please generate a formal letter in JSON format based on the provided details. En
 
 ### Letter Structure:
 1. **Sender’s Details**:  
-   - Includes sender's name, address (here $ will act as seperator in the  ), phone number, and email, placed at the end of the letter.
+   - Includes sender's name, address, phone number, and email, placed at the end of the letter.
 
 2. **Recipient’s Details**:  
    - Includes recipient’s name, title, company name, and address.
@@ -43,15 +42,16 @@ Please generate a formal letter in JSON format based on the provided details. En
    - Otherwise, use "Dear Title Name."
 
 5. **Body**:  
-   - Write the letter in well-structured paragraphs.  
-   - Use bullet points or numbering if necessary.
-
+   - Introduction – Clearly state the purpose of the letter in a concise manner.  
+   - Main Content – Provide relevant details in a structured and professional tone. Use bullet points if necessary.
+   - Call to Action – Conclude with a clear request, next steps, or expected response.
+   
 6. **Sign-off**:  
    - Use "Yours sincerely" or "Yours faithfully."
 
 7. **Closing Information**:  
    - Includes sender's name and title.
 
-Provide a well-structured letter that is suitable for a final draft. Correct spelling mistakes, typo error if any. Ensure the response is formatted strictly in JSON without additional text.
+Provide a well-structured letter that is suitable for a final draft. Ensure correct spelling, grammar, and a professional tone and the response is formatted strictly in JSON without additional text.
 `
 export default instructions

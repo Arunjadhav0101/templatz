@@ -1,43 +1,26 @@
+
 @media print {
-  @page {
-    margin: 0!important; /* Set margins (adjust as needed) */
+  @page{
+    margin: 0;
+    background: none;
   }
-  #letter {
-    margin: 0cm;
-  }
-  body {
-    font-size: 12pt;
-    color: black;
-    background: none; /* Remove background colors */
-  }
-  * {
-    background: none !important; /* Remove all background graphics */
-  }
-  .no-print {
-    display: none; /* Hide elements that shouldn't be printed */
-  }
-
-  .page-break {
-    page-break-before: always; /* Force a new page */
-  }
-
-  .content {
-    width: 100%;
-    max-width: 210mm; /* A4 width */
-    padding: 0; /* Keep spacing inside */
-    box-sizing: border-box;
-    border: none !important;
+  #letter{
+    background-color: white;
+    color:black;
+    padding: 10px 0!important;
+    margin: 0.8rem auto!important;
   }
 }
 
-.content {
-  padding: 1.5rem;
-  border: 1px solid rgb(109, 109, 109);
-  min-height: 297mm; /* A4 height */
-  max-width: 210mm !important; /* A4 width */
-  width: 100%;
+#letter{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  max-width: 21cm;
+  margin: 100px auto;
+  height: fit-content;
 }
-
 /* .letter-navbar-top {
   grid-area: navbar;
   background-color: #333;
