@@ -35,7 +35,7 @@ Please generate a formal letter in JSON format based on the provided details. En
    - Includes recipient’s name, title, company name, and address.
 
 3. **Subject Line**:  
-   - Summarizes the letter’s purpose clearly.
+   - Clearly summarizes the letter’s purpose and includes a brief description.
 
 4. **Greeting**:  
    - Use "Respected Title Name" for educational institutes.  
@@ -45,7 +45,7 @@ Please generate a formal letter in JSON format based on the provided details. En
    - Introduction – Clearly state the purpose of the letter in a concise manner.  
    - Main Content – Provide relevant details in a structured and professional tone. Use bullet points if necessary.
    - Call to Action – Conclude with a clear request, next steps, or expected response.
-   
+
 6. **Sign-off**:  
    - Use "Yours sincerely" or "Yours faithfully."
 
